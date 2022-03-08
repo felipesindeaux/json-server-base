@@ -6,6 +6,41 @@
       "name": "Kenzinho",
       "age": 38,
       "id": 1
+    },
+    {
+      "email": "felipe@teste.com",
+      "password": "$2a$10$tgx/T1/qfq3DpjeqvRwWnO13pzXVsnD2Ne3UbaRKMjsUiM1XQxWDi",
+      "name": "Felipe",
+      "age": 20,
+      "id": 2
+    }
+  ],
+  "series": [
+    {
+      "name": "Rick and Morty"
+    },
+    {
+      "name": "Peaky Blinders"
+    },
+    {
+      "name": "Vikings"
+    },
+    {
+      "name": "Suits"
+    }
+  ],
+  "comments": [
+    {
+      "comment": "Muito bom",
+      "serie": "Rick and Morty",
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "comment": "Entediante",
+      "serie": "Suits",
+      "userId": 2,
+      "id": 2
     }
   ]
 }
