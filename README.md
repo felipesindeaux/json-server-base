@@ -32,7 +32,7 @@ Assim como a documentação do JSON-Server-Auth traz (https://www.npmjs.com/pack
 
 ### Comments
 
-`GET /series - FORMATO DA RESPOSTA - 200`
+`GET /comments - FORMATO DA RESPOSTA - 200`
 ```json
 [
 	{
@@ -43,7 +43,7 @@ Assim como a documentação do JSON-Server-Auth traz (https://www.npmjs.com/pack
 	}
 ]
 ```
-`POST /series - FORMATO DA RESPOSTA - 201`
+`POST /comments - FORMATO DA RESPOSTA - 201`
 ```json
 {
 	"comment": "Entediante",
