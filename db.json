@@ -5,41 +5,69 @@
       "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
       "name": "Kenzinho",
       "age": 38,
+      "type": "Prestador",
+      "img": "http://www.def.uem.br/arquivos/imagens/fotos-dos-docentes/semimagemavatar.png/image_preview",
       "id": 1
     },
     {
       "email": "felipe@teste.com",
-      "password": "$2a$10$tgx/T1/qfq3DpjeqvRwWnO13pzXVsnD2Ne3UbaRKMjsUiM1XQxWDi",
+      "password": "$2a$10$KHE9mgMKLj7Vl1dIG6CaZ.njOP00fJaRLwP2gwBuHOfTb5FtUtGdy",
       "name": "Felipe",
       "age": 20,
+      "type": "Consumidor",
+      "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
       "id": 2
     }
   ],
-  "series": [
+  "services": [
     {
-      "name": "Rick and Morty"
+      "title": "Eu vou Divulgar Para Mais De 30mil Seguidores",
+      "images": [
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/418420/09a3b7008f562804e64b7100799ce8cc.jpg"
+      ],
+      "price": 20,
+      "desc": "Eu vou divulgar a sua empresa na minha página do Facebook com mais de 30 mil seguidores por 1 dia (Sem impulsionamento). Se precisar de mais e com impulsionamento, favor, verificar serviços extras abaixo.",
+      "prazoEntrega": "2 dias",
+      "tags": [
+        "Publicidade",
+        "Terror"
+      ],
+      "userId": 1,
+      "id": 1
     },
     {
-      "name": "Peaky Blinders"
-    },
-    {
-      "name": "Vikings"
-    },
-    {
-      "name": "Suits"
+      "title": "Eu vou desenhar você em estilo anime ou semi-realista",
+      "images": [
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/draw4hhrs.jpg",
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/drawoc1t3h40min.jpg",
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/draw3h20min.jpg",
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/084545681e6b6b96e72a9256613a3d3b.jpg"
+      ],
+      "price": 40,
+      "desc": "Vou fazer um desenho digital usando o mouse transformando você em estilo anime ou semi-realista.",
+      "prazoEntrega": "2 dias",
+      "tags": [
+        "Dsenho",
+        "Ilustração",
+        "Anime"
+      ],
+      "userId": 2,
+      "id": 2
     }
   ],
-  "comments": [
+  "ratings": [
     {
-      "comment": "Muito bom",
-      "serie": "Rick and Morty",
+      "stars": 4,
+      "comment": "Muito bom!",
+      "serviceId": 1,
       "userId": 2,
       "id": 1
     },
     {
-      "comment": "Entediante",
-      "serie": "Suits",
-      "userId": 2,
+      "stars": 3,
+      "comment": "Demorou para entregar mas foi bem feito.",
+      "serviceId": 2,
+      "userId": 1,
       "id": 2
     }
   ]
