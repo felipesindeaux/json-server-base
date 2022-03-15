@@ -148,10 +148,10 @@ Email já cadastrado:
 `POST /sessions - FORMATO DA REQUISIÇÃO`
 
 ```json
-  {
-    "email": "johndoe@email.com",
-    "password": "123456"
-  }
+{
+  "email": "johndoe@email.com",
+  "password": "123456"
+}
 ```
 
 Caso dê tudo certo, a resposta será assim:
@@ -254,20 +254,23 @@ Não é necessário um corpo da requisição.
 
 ```json
 {
-	"email": "felipe@teste.com",
-	"password": "123456",
-	"name": "Felipe",
-	"age": 21,
-	"type": "Consumidor",
-	"img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
-	"userId": 2
+  "email": "felipe@teste.com",
+  "password": "123456",
+  "name": "Felipe",
+  "age": 21,
+  "type": "Consumidor",
+  "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
+  "userId": 2
 }
 ```
 
-`POST /users/:user_id  - FORMATO DA RESPOSTA - STATUS 200`
+`POST /users/:user_id - FORMATO DA RESPOSTA - STATUS 200`
+
+ É necessário a autorização via token para a requisição.
+
+ > Authorization: Bearer {token}
 
 ```json
-
 {
 	"email": "felipe@teste.com",
 	"password": "$2a$10$p0/vzpPRLdMzoZH2Sz5sPe50VqBi6RySOjlVkWSUw05gI7qr4dxZi",
@@ -277,6 +280,29 @@ Não é necessário um corpo da requisição.
 	"img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
 	"userId": 2,
 	"id": 2
+}
+```
+
+<h2 align ='center'> Vizualizando os serviços contratados para o usuário</h2>
+
+ É necessário a autorização via token para a requisição.
+
+para vizualizar os serviços que foram contratados para um especifico prestador de serviço é necessario realiazar:
+
+`GET/servicescontracts/?userId_prestador={numero do id do prestador} - FORMATO DA RESPOSTA - STATUS 200`
+
+```json
+{
+	"name_contrante": "Kenzinho",
+		"name_service": "Eu vou Divulgar Para Mais De 30mil Seguidores",
+		"userId_contratante": 1,
+		"userId_prestador": 2
+	},
+	{
+		"name_contrante": "Bruno",
+		"name_service": "Eu vou Divulgar Para Mais De 30mil Seguidores",
+		"userId_contratante": 1,
+		"userId_prestador": 2
 }
 ```
 

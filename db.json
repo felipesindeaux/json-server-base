@@ -11,9 +11,9 @@
     },
     {
       "email": "felipe@teste.com",
-      "password": "$2a$10$p0/vzpPRLdMzoZH2Sz5sPe50VqBi6RySOjlVkWSUw05gI7qr4dxZi",
+      "password": "$2a$10$teMYCQGyhkwqXw3YruottOI0tNAshiKtS8dLCWk47EDYyB9dh1hbu",
       "name": "Felipe",
-      "age": 21,
+      "age": 20,
       "type": "Consumidor",
       "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
       "userId": 2,
@@ -29,10 +29,7 @@
       "price": 20,
       "desc": "Eu vou divulgar a sua empresa na minha página do Facebook com mais de 30 mil seguidores por 1 dia (Sem impulsionamento). Se precisar de mais e com impulsionamento, favor, verificar serviços extras abaixo.",
       "prazoEntrega": "2 dias",
-      "tags": [
-        "Publicidade",
-        "Terror"
-      ],
+      "tags": ["Publicidade", "Terror"],
       "userId": 1,
       "id": 1
     },
@@ -47,11 +44,7 @@
       "price": 40,
       "desc": "Vou fazer um desenho digital usando o mouse transformando você em estilo anime ou semi-realista.",
       "prazoEntrega": "2 dias",
-      "tags": [
-        "Dsenho",
-        "Ilustração",
-        "Anime"
-      ],
+      "tags": ["Dsenho", "Ilustração", "Anime"],
       "userId": 2,
       "id": 2
     }
@@ -70,6 +63,28 @@
       "serviceId": 2,
       "userId": 1,
       "id": 2
+    }
+  ],
+  "servicescontracts": [
+    {
+      "name_contrante": "Kenzinho",
+      "name_service": "Eu vou Divulgar Para Mais De 30mil Seguidores",
+      "userId_contratante": 1,
+      "userId_prestador": 2
+    },
+
+    {
+      "name_contrante": "Bruno",
+      "name_service": "Eu vou Divulgar Para Mais De 30mil Seguidores",
+      "userId_contratante": 1,
+      "userId_prestador": 2
+    },
+
+    {
+      "name_contrante": "Kenzinho",
+      "name_service": "Eu vou Divulgar Para Mais De 30mil Seguidores",
+      "userId_contratante": 1,
+      "userId_prestador": 3
     }
   ]
 }
