@@ -148,10 +148,10 @@ Email já cadastrado:
 `POST /sessions - FORMATO DA REQUISIÇÃO`
 
 ```json
-{
-  "email": "johndoe@email.com",
-  "password": "123456"
-}
+  {
+    "email": "johndoe@email.com",
+    "password": "123456"
+  }
 ```
 
 Caso dê tudo certo, a resposta será assim:
@@ -257,12 +257,30 @@ Não é necessário um corpo da requisição.
 	"email": "felipe@teste.com",
 	"password": "123456",
 	"name": "Felipe",
-	"age": 20,
+	"age": 21,
 	"type": "Consumidor",
-	"img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br"
+	"img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
+	"userId": 2
 }
 ```
 
+`POST /users/:user_id  - FORMATO DA RESPOSTA - STATUS 200`
+
+```json
+
+{
+	"email": "felipe@teste.com",
+	"password": "$2a$10$p0/vzpPRLdMzoZH2Sz5sPe50VqBi6RySOjlVkWSUw05gI7qr4dxZi",
+	"name": "Felipe",
+	"age": 21,
+	"type": "Consumidor",
+	"img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
+	"userId": 2,
+	"id": 2
+}
+```
+
+
 ---
 
-Feito com ♥ by araujooj :wave:
+Feito com ♥ by araujooj :wave:Atu

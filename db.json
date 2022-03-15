@@ -11,11 +11,12 @@
     },
     {
       "email": "felipe@teste.com",
-      "password": "$2a$10$KHE9mgMKLj7Vl1dIG6CaZ.njOP00fJaRLwP2gwBuHOfTb5FtUtGdy",
+      "password": "$2a$10$p0/vzpPRLdMzoZH2Sz5sPe50VqBi6RySOjlVkWSUw05gI7qr4dxZi",
       "name": "Felipe",
-      "age": 20,
+      "age": 21,
       "type": "Consumidor",
       "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
+      "userId": 2,
       "id": 2
     }
   ],
