@@ -16,7 +16,6 @@
       "age": 20,
       "type": "Consumidor",
       "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
-      "userId": 2,
       "id": 2
     }
   ],
@@ -28,13 +27,13 @@
       ],
       "price": 20,
       "desc": "Eu vou divulgar a sua empresa na minha página do Facebook com mais de 30 mil seguidores por 1 dia (Sem impulsionamento). Se precisar de mais e com impulsionamento, favor, verificar serviços extras abaixo.",
-      "prazoEntrega": "2 dias",
+      "deliveryTime": "2 dias",
       "tags": ["Publicidade", "Terror"],
       "userId": 1,
       "id": 1
     },
     {
-      "title": "Eu vou desenhar você em estilo anime ou semi-realista",
+      "title": "Eu vou desenhar você em estilo realista",
       "images": [
         "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/draw4hhrs.jpg",
         "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/drawoc1t3h40min.jpg",
@@ -43,10 +42,78 @@
       ],
       "price": 40,
       "desc": "Vou fazer um desenho digital usando o mouse transformando você em estilo anime ou semi-realista.",
-      "prazoEntrega": "2 dias",
-      "tags": ["Dsenho", "Ilustração", "Anime"],
+      "deliveryTime": "4 dias",
+      "tags": ["Desenho", "Ilustração", "Anime"],
       "userId": 2,
       "id": 2
+    },
+    {
+      "title": "Eu voudsadasdasd desenhar você em estilo anime ou semi-realista",
+      "images": [
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/draw4hhrs.jpg",
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/drawoc1t3h40min.jpg",
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/draw3h20min.jpg",
+        "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/084545681e6b6b96e72a9256613a3d3b.jpg"
+      ],
+      "price": 40,
+      "desc": "Vou fazer um desenho digital usando o mouse transformando você em estilo anime ou semi-realista.",
+      "deliveryTime": "2 dias",
+      "tags": ["Dsenho", "Ilustração", "Anime"],
+      "userId": 2,
+      "id": 3
+    }
+  ],
+  "pendings": [
+    {
+      "title": "Eu vou desenhar você em estilo realista",
+      "price": 40,
+      "deliveryTime": "4 dias",
+      "serviceId": 2,
+      "id": 1,
+      "hirer": {
+        "name": "Kenzinho",
+        "id": 1,
+        "img": "http://www.def.uem.br/arquivos/imagens/fotos-dos-docentes/semimagemavatar.png/image_preview"
+      },
+      "hired": {
+        "name": "Felipe",
+        "id": 2,
+        "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br"
+      }
+    },
+    {
+      "title": "Eu vou Divulgar Para Mais De 30mil Seguidores",
+      "price": 20,
+      "deliveryTime": "2 dias",
+      "serviceId": 1,
+      "hirer": {
+        "name": "Felipe",
+        "id": 2,
+        "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br"
+      },
+      "hired": {
+        "name": "Kenzinho",
+        "id": 1,
+        "img": "http://www.def.uem.br/arquivos/imagens/fotos-dos-docentes/semimagemavatar.png/image_preview"
+      },
+      "id": 2
+    },
+    {
+      "title": "Eu vou Divulgar Para Mais De 30mil Seguidores",
+      "price": 20,
+      "deliveryTime": "2 dias",
+      "serviceId": 1,
+      "hirer": {
+        "name": "Felipe",
+        "id": 2,
+        "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br"
+      },
+      "hired": {
+        "name": "Kenzinho",
+        "id": 10,
+        "img": "http://www.def.uem.br/arquivos/imagens/fotos-dos-docentes/semimagemavatar.png/image_preview"
+      },
+      "id": 3
     }
   ],
   "ratings": [
@@ -63,28 +130,6 @@
       "serviceId": 2,
       "userId": 1,
       "id": 2
-    }
-  ],
-  "servicescontracts": [
-    {
-      "name_contrante": "Kenzinho",
-      "name_service": "Eu vou Divulgar Para Mais De 30mil Seguidores",
-      "userId_contratante": 1,
-      "userId_prestador": 2
-    },
-
-    {
-      "name_contrante": "Bruno",
-      "name_service": "Eu vou Divulgar Para Mais De 30mil Seguidores",
-      "userId_contratante": 1,
-      "userId_prestador": 2
-    },
-
-    {
-      "name_contrante": "Kenzinho",
-      "name_service": "Eu vou Divulgar Para Mais De 30mil Seguidores",
-      "userId_contratante": 1,
-      "userId_prestador": 3
     }
   ]
 }

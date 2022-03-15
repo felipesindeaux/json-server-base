@@ -3,11 +3,11 @@
 </h1>
 
 <h1 align="center">
-  Nome que não decidimos ainda - API
+  Jobinhos - API
 </h1>
 
 <p align = "center">
-Este é o backend da aplicação Nome que não decidimos ainda - Uma aplicação para prestadores e consumidores de serviços feita pelos alunos da Kenzie. O objetivo dessa aplicação é facilitar a comunicação entre prestador/consumidor.
+Este é o backend da aplicação Jobinhos - Uma aplicação para prestadores e consumidores de serviços feita pelos alunos da Kenzie. O objetivo dessa aplicação é facilitar a comunicação entre prestador/consumidor.
 </p>
 
 <p align="center">
@@ -24,10 +24,7 @@ O url base da API é http://localhost:3001/
 
 ## Rotas que não precisam de autenticação
 
-<h2 align ='center'> Listando usuários </h2>
-
-Nessa aplicação o usuário sem fazer login ou se cadastrar pode ver os devs já cadastrados na plataforma, na API podemos acessar a lista dessa forma:
-Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados.
+<h2 align ='center'> Listando serviços </h2>
 
 `GET /services - FORMATO DA RESPOSTA - STATUS 200`
 
@@ -40,7 +37,7 @@ Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados
     ],
     "price": 20,
     "desc": "Eu vou divulgar a sua empresa na minha página do Facebook com mais de 30 mil seguidores por 1 dia (Sem impulsionamento). Se precisar de mais e com impulsionamento, favor, verificar serviços extras abaixo.",
-    "prazoEntrega": "2 dias",
+    "deliveryTime": "2 dias",
     "tags": ["Publicidade", "Terror"],
     "userId": 1,
     "id": 1
@@ -55,7 +52,7 @@ Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados
     ],
     "price": 40,
     "desc": "Vou fazer um desenho digital usando o mouse transformando você em estilo anime ou semi-realista.",
-    "prazoEntrega": "2 dias",
+    "deliveryTime": "2 dias",
     "tags": ["Dsenho", "Ilustração", "Anime"],
     "userId": 2,
     "id": 2
@@ -65,119 +62,87 @@ Aqui conseguimos ver os usuários, suas tecnologias e seus trabalhos cadastrados
 
 <h2 align ='center'> Criação de usuário </h2>
 
-`POST /users - FORMATO DA REQUISIÇÃO`
+`POST /register - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "email": "johndoe@email.com",
+  "email": "felipe@teste.com",
   "password": "123456",
-  "name": "John Doe",
-  "bio": "Lorem ipsum dolor emet",
-  "contact": "linkedin/in/johndoe",
-  "course_module": "Segundo Módulo (Frontend avançado)"
+  "name": "Felipe",
+  "age": 20,
+  "type": "Consumidor",
+  "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br"
 }
 ```
 
 Caso dê tudo certo, a resposta será assim:
 
-`POST /users - FORMATO DA RESPOSTA - STATUS 201`
-
 ```json
 {
-  "id": "c110dbb6-beb9-4682-ab63-2c12a570d66b",
-  "name": "John Doe",
-  "email": "johndoe@email.com",
-  "course_module": "Segundo Módulo (Frontend avançado)",
-  "bio": "Lorem ipsum dolor emet",
-  "contact": "linkedin/in/johndoe",
-  "created_at": "2020-12-05T14:38:02.019Z",
-  "updated_at": "2020-12-05T14:38:02.019Z",
-  "avatar_url": null
+  "email": "felipe@teste.com",
+  "password": "123456",
+  "name": "Felipe",
+  "age": 20,
+  "type": "Consumidor",
+  "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
+  "id": 2
 }
 ```
 
-1. O campo - "contact": Pode receber as redes sociais da pessoa, ou numero de telefone, algum método de contato fora da aplicação.
-
-2. O campo - "course_module" deve receber respectivamente os 4 módulos do curso da kenzie, devendo ser escritos dessa forma:
-   1. "Primeiro módulo (Introdução ao Frontend)"
-   2. "Segundo módulo (Frontend Avançado)"
-   3. "Terceiro módulo (Introdução ao Backend)"
-   4. "Quarto módulo (Backend Avançado)"
-
-<h2 align ='center'> Possíveis erros </h2>
-
-Caso você acabe errando e mandando algum campo errado, a resposta de erro será assim:
-No exemplo a requisição foi feita faltando o campo "contact" e "course_module".
-
-`POST /users - `
-` FORMATO DA RESPOSTA - STATUS 400`
-
-```json
-{
-  "status": "error",
-  "message": ["contact is required", "course_module is required"]
-}
-```
-
-A senha necessita de 6 caracteres.
-
-`POST /users - `
-` FORMATO DA RESPOSTA - STATUS 400`
-
-```json
-{
-  "status": "error",
-  "message": ["password: minimum is 6 characters"]
-}
-```
-
-Email já cadastrado:
-
-`POST /users - `
-` FORMATO DA RESPOSTA - STATUS 400`
-
-```json
-{
-  "status": "error",
-  "message": "Email already exists"
-}
-```
+O campo - "type": Pode receber "Prestador" ou "Consumidor" para definir o tipo de usuário.
 
 <h2 align = "center"> Login </h2>
 
-`POST /sessions - FORMATO DA REQUISIÇÃO`
+`POST /login - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "email": "johndoe@email.com",
+  "email": "felipe@teste.com",
   "password": "123456"
 }
 ```
 
 Caso dê tudo certo, a resposta será assim:
 
-`POST /sessions - FORMATO DA RESPOSTA - STATUS 201`
+`POST /login - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 {
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlbGlwZUB0ZXN0ZS5jb20iLCJpYXQiOjE2NDczNjY4MzgsImV4cCI6MTY0NzM3MDQzOCwic3ViIjoiMiJ9.vP0O5aqf0oTrtKKqxFbiaeHDb2NRplchadS5JJJlmzQ",
   "user": {
-    "id": "2a75e12d-fd1c-481d-ba88-4d8b17103b2a",
-    "name": "John Doe",
-    "email": "johndoe@email.com",
-    "course_module": "Segundo Módulo (Frontend avançado)",
-    "bio": "Lorem ipsum dolor emet",
-    "contact": "linkedin/in/johndoe",
-    "created_at": "2020-12-05T17:45:04.207Z",
-    "updated_at": "2020-12-05T17:45:04.207Z",
-    "techs": [],
-    "works": [],
-    "avatar_url": null
-  },
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDcxODM3NzYsImV4cCI6MTYwNzQ0Mjk3Niwic3ViIjoiMmE3NWUxMmQtZmQxYy00ODFkLWJhODgtNGQ4YjE3MTAzYjJhIn0.UY67X23mPYAAzT43uFWZDHPUakd2STo5w4AuOcppkyQ"
+    "email": "felipe@teste.com",
+    "name": "Felipe",
+    "age": 20,
+    "type": "Consumidor",
+    "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
+    "id": 2
+  }
 }
 ```
 
-Com essa resposta, vemos que temos duas informações, o user e o token respectivo, dessa forma você pode guardar o token e o usuário logado no localStorage para fazer a gestão do usuário no seu frontend.
+Com essa resposta, vemos que temos duas informações, o user e o accessToken respectivo, dessa forma você pode guardar o token e o usuário logado no localStorage para fazer a gestão do usuário no seu frontend.
+
+<h2 align ='center'> Possíveis erros </h2>
+
+Caso você acabe errando e mandando algum campo errado, a resposta de erro será assim:
+
+A senha necessita ter no mínimo 3 caracteres:
+
+`POST /register - `
+` FORMATO DA RESPOSTA - STATUS 400`
+
+```json
+"Password is too short"
+```
+
+Email já cadastrado:
+
+`POST /register - `
+` FORMATO DA RESPOSTA - STATUS 400`
+
+```json
+"Email already exists"
+```
 
 ## Rotas que necessitam de autorização
 
@@ -187,18 +152,37 @@ Rotas que necessitam de autorização deve ser informado no cabeçalho da requis
 
 <h2 align ='center'> Listar seu usuário </h2>
 
-Podemos acessar um usuário específico utilizando o endpoint:
+Podemos acessar as informações do seu usuário utilizando o endpoint:
 
 `GET /users/:user_id - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 {
   "email": "felipe@teste.com",
-  "password": "$2a$10$tgx/T1/qfq3DpjeqvRwWnO13pzXVsnD2Ne3UbaRKMjsUiM1XQxWDi",
+  "password": "$2a$10$teMYCQGyhkwqXw3YruottOI0tNAshiKtS8dLCWk47EDYyB9dh1hbu",
   "name": "Felipe",
   "age": 20,
   "type": "Consumidor",
+  "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
   "id": 2
+}
+```
+
+Obs: Só é permitido ver as informações de seu usuário
+
+<h2 align ='center'> Atualizando os dados do perfil </h2>
+
+`PUT /users/:user_id - FORMATO DA REQUISIÇÃO`
+
+```json
+{
+  "email": "felipe@teste.com",
+  "password": "123456",
+  "name": "Felipe",
+  "age": 21,
+  "type": "Consumidor",
+  "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
+  "userId": 2
 }
 ```
 
@@ -217,17 +201,17 @@ Podemos acessar um usuário específico utilizando o endpoint:
   ],
   "price": 40,
   "desc": "Vou fazer um desenho digital usando o mouse transformando você em estilo anime ou semi-realista.",
-  "prazoEntrega": "2 dias",
+  "deliveryTime": "2 dias",
   "tags": ["Dsenho", "Ilustração", "Anime"],
   "userId": 2
 }
 ```
 
-`PUT /services - FORMATO DA REQUISIÇÃO`
+`PUT /services/:service:id - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "title": "Eu vou desenhar você em estilo totalmente realista",
+  "title": "Eu desenhar você em estilo realista",
   "images": [
     "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/draw4hhrs.jpg",
     "https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/223792/drawoc1t3h40min.jpg",
@@ -236,9 +220,10 @@ Podemos acessar um usuário específico utilizando o endpoint:
   ],
   "price": 40,
   "desc": "Vou fazer um desenho digital usando o mouse transformando você em estilo anime ou semi-realista.",
-  "prazoEntrega": "4 dias",
+  "deliveryTime": "4 dias",
   "tags": ["Desenho", "Ilustração", "Anime"],
-  "userId": 2
+  "userId": 2,
+  "id": 4
 }
 ```
 
@@ -248,48 +233,11 @@ Podemos acessar um usuário específico utilizando o endpoint:
 Não é necessário um corpo da requisição.
 ```
 
-<h2 align ='center'> Atualizando os dados do perfil </h2>
+<h2 align ='center'> Vizualizando os serviços contratados/pendentes para o usuário</h2>
 
-`PUT /users/:user_id - FORMATO DA REQUISIÇÃO`
+para vizualizar os serviços que foram contratados para um especifico prestador de serviço é necessario realizar:
 
-```json
-{
-  "email": "felipe@teste.com",
-  "password": "123456",
-  "name": "Felipe",
-  "age": 21,
-  "type": "Consumidor",
-  "img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
-  "userId": 2
-}
-```
-
-`POST /users/:user_id - FORMATO DA RESPOSTA - STATUS 200`
-
- É necessário a autorização via token para a requisição.
-
- > Authorization: Bearer {token}
-
-```json
-{
-	"email": "felipe@teste.com",
-	"password": "$2a$10$p0/vzpPRLdMzoZH2Sz5sPe50VqBi6RySOjlVkWSUw05gI7qr4dxZi",
-	"name": "Felipe",
-	"age": 21,
-	"type": "Consumidor",
-	"img": "https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br",
-	"userId": 2,
-	"id": 2
-}
-```
-
-<h2 align ='center'> Vizualizando os serviços contratados para o usuário</h2>
-
- É necessário a autorização via token para a requisição.
-
-para vizualizar os serviços que foram contratados para um especifico prestador de serviço é necessario realiazar:
-
-`GET/servicescontracts/?userId_prestador={numero do id do prestador} - FORMATO DA RESPOSTA - STATUS 200`
+`GET/pendings/ - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 {
@@ -305,7 +253,6 @@ para vizualizar os serviços que foram contratados para um especifico prestador 
 		"userId_prestador": 2
 }
 ```
-
 
 ---
 

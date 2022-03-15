@@ -1,7 +1,6 @@
 {
   "users": 600,
   "services": 664,
-  "ratings": 664,
-  "servicescontracts": 660
-
+  "pendings": 660,
+  "ratings": 664
 }
